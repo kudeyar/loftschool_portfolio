@@ -32,10 +32,10 @@
                 </div>
 
                 <div class="sn">
-                    <a href="vk.com" class="vk"></a>
-                    <a href="vk.com" class="twi"></a>
-                    <a href="vk.com" class="fb"></a>
-                    <a href="vk.com" class="git"></a>
+                    <a href="http://vk.com" class="vk"></a>
+                    <a href="http://vk.com" class="twi"></a>
+                    <a href="http://vk.com" class="fb"></a>
+                    <a href="http://vk.com" class="git"></a>
                 </div>
                 <div class="header_line"></div>
             </div>

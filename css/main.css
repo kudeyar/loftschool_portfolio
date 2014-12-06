@@ -1,10 +1,25 @@
 @font-face {
-    font-family: HelveticaNeueCyrBold; /* Гарнитура шрифта */
-    src: url(/fonts/HelveticaNeueCyr-bold.ttf); /* Путь к файлу со шрифтом */
+    font-family: 'HelveticaNeueCyrBold';
+    src: url('/fonts/helveticaneuecyr-bold-webfont.eot');
+    src: url('/fonts/helveticaneuecyr-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/helveticaneuecyr-bold-webfont.woff2') format('woff2'),
+         url('/fonts/helveticaneuecyr-bold-webfont.woff') format('woff'),
+         url('/fonts/helveticaneuecyr-bold-webfont.ttf') format('truetype'),
+         url('/fonts/helveticaneuecyr-bold-webfont.svg#helveticaneuecyrbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 @font-face {
-    font-family: HelveticaNeueCyrLight; /* Гарнитура шрифта */
-    src: url(/fonts/HelveticaNeueCyr-light.ttf); /* Путь к файлу со шрифтом */
+    font-family: 'helveticaneuecyrlight';
+    src: url('/fonts/helveticaneuecyr-light-webfont.eot');
+    src: url('/fonts/helveticaneuecyr-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/helveticaneuecyr-light-webfont.woff2') format('woff2'),
+         url('/fonts/helveticaneuecyr-light-webfont.woff') format('woff'),
+         url('/fonts/helveticaneuecyr-light-webfont.ttf') format('truetype'),
+         url('/fonts/helveticaneuecyr-light-webfont.svg#helveticaneuecyrlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
 }
 
 body{    
