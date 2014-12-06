@@ -1,0 +1,51 @@
+wrapper {
+    min-height: 100%;
+    /*height: auto !important;*/
+
+    margin: 25px auto;
+    width: 960px;
+    display: block;
+}
+
+menu {
+    border-radius: 4px;
+    background-color:  #eff3f7;
+    width: 250px;
+    display: inline-block;
+    float: left;
+    padding: 0px;
+    margin-left: 25px;
+}
+
+menu>ul{
+    padding:0;
+    margin:0;    
+}
+
+menu>ul>li {
+    list-style-type: none;
+    display: block;
+    height: 71px;
+    padding-top: 22px;
+}
+
+menu a {
+    color:  #959aa8;
+    font-family: fira_sansregular;    
+    font-size: 21px; /* Приближение из-за подстановки шрифтов */
+    font-weight: 300;
+    margin-left: 27px;
+}
+
+menu a:hover {
+    text-decoration: none;
+    color: #3ba8c0;
+}
+
+menu .line {
+    background-color:  #3ba8c0;
+    width: 230px;
+    height: 2px;
+    display: block;
+    margin: 0 auto;
+}

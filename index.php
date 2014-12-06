@@ -6,10 +6,10 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
+        <title>Sergey LoftSchool</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <link rel="shortcut icon" href="/img/favicon.ico" >
         <link rel="stylesheet" href="css/bootstrap.min.css">
 
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
@@ -26,20 +26,32 @@
         <header>
             <div class="header_wrapper">
                 <div class="loft-text">
-                    <font class="header_text">LOFTSCHOOL</font>
+                    <font class="header_text"><a href="/">LOFTSCHOOL</a></font>
                     <div class="header_title_line"></div>
                     <font class="header_text_mini">комплексное обучение web разработке</font>
                 </div>
 
                 <div class="sn">
                     <a href="http://vk.com" class="vk"></a>
-                    <a href="http://vk.com" class="twi"></a>
-                    <a href="http://vk.com" class="fb"></a>
-                    <a href="http://vk.com" class="git"></a>
+                    <a href="http://twitter.com" class="twi"></a>
+                    <a href="http://facebook.com" class="fb"></a>
+                    <a href="http://github.com" class="git"></a>
                 </div>
                 <div class="header_line"></div>
             </div>
         </header>
+        
+        <wrapper>
+            <menu>
+                <ul id="navigation">
+                    <li><a href="/about">Обо мне</a></li>
+                    <div class="line"></div>
+                    <li><a href="/works">Мои работы</a></li>
+                    <div class="line"></div>
+                    <li><a href="/contacts">Связаться со мной</a></li>
+                </ul>
+            </menu>
+        </wrapper>
 
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
