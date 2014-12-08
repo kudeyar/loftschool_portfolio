@@ -1,0 +1,119 @@
+content {
+    display: block;
+    position: relative;
+    float: right;
+    width: 650px;
+    border-radius: 4px;
+    background-color:  #eff3f7;
+    margin-top: 25px;
+    margin-right: -25px;
+    font-family: fira_sansregular;
+}
+
+content_title {
+    display: block;
+    height: 68px;
+    width: 100%;
+}
+
+.content_title {
+    display: inline-block;
+    color:  #3ba8c0;
+    font-size: 27px; /* Приближение из-за подстановки шрифтов */
+    font-weight: 300;
+    line-height: 30px; /* Приближение из-за подстановки шрифтов */
+    text-align: left;
+    height: 68px;
+    padding: 19px;
+    border-bottom: 2px solid #3ba8c0;
+    float: left;
+}
+
+infa {
+    display: block;
+    margin: 17px 22px;
+    float: left;
+    width: 100%;
+}
+
+infa>.photo {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    float: left;
+    border: 5px solid #3ba8c0;
+}
+
+infa>.title_bold {
+    display: inline-block;
+    color:  #4a545d;
+    font-size: 17px; /* Приближение из-за подстановки шрифтов */
+    font-weight: 600;
+    text-align: left;
+    margin: 3px 15px 13px 38px;
+}
+
+infa>.text {
+    display: inline-block;
+    color:  #37424d;
+    font-size: 15px; /* Приближение из-за подстановки шрифтов */
+    font-weight: 300;
+    text-align: left;
+}
+
+infa>.work {
+    display: block;
+    float: left;
+    margin: 19px 43px 5px;
+    padding: 0px;
+    min-width: 400px; 
+}
+
+infa>.work>.work_img {
+    float: left;
+    margin-right: 30px;
+    margin-bottom: 11px;
+}
+infa>.work>.course {
+    margin: 0px 35px 5px 10px;
+}
+
+infa>.work>.work_place {
+    color:  #4a545d;
+    font-size: 17px; /* Приближение из-за подстановки шрифтов */
+    font-weight: 300;
+    text-align: left;
+    padding: 0px;
+}
+
+infa>.work>.work_time {
+    color:  #4a545d;
+    font-size: 15px; /* Приближение из-за подстановки шрифтов */
+    font-weight: 300;
+    text-align: left;
+}
+
+.navyk {
+    display: inline-block;
+    border-radius: 2px;
+    background: -webkit-linear-gradient(90deg, #2e8ca2 0%, #2e8ca2 47%, #3ba8c0 48%, #3ba8c0 100%);
+    background: -moz-linear-gradient(90deg, #2e8ca2 0%, #2e8ca2 47%, #3ba8c0 48%, #3ba8c0 100%);
+    background: -o-linear-gradient(90deg, #2e8ca2 0%, #2e8ca2 47%, #3ba8c0 48%, #3ba8c0 100%);
+    background: -ms-linear-gradient(90deg, #2e8ca2 0%, #2e8ca2 47%, #3ba8c0 48%, #3ba8c0 100%);
+    background: linear-gradient(0deg, #2e8ca2 0%, #2e8ca2 47%, #3ba8c0 48%, #3ba8c0 100%);
+    height: 19px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 0 10px;
+    margin: 5px;
+}
+
+.group_navyk {
+    display: inline;
+    width: 240px;
+    float: right;
+    margin: 0px 4px 0 0;;
+
+}

@@ -2,10 +2,10 @@
     font-family: 'HelveticaNeueCyrBold';
     src: url('/fonts/helveticaneuecyr-bold-webfont.eot');
     src: url('/fonts/helveticaneuecyr-bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/fonts/helveticaneuecyr-bold-webfont.woff2') format('woff2'),
-         url('/fonts/helveticaneuecyr-bold-webfont.woff') format('woff'),
-         url('/fonts/helveticaneuecyr-bold-webfont.ttf') format('truetype'),
-         url('/fonts/helveticaneuecyr-bold-webfont.svg#helveticaneuecyrbold') format('svg');
+        url('/fonts/helveticaneuecyr-bold-webfont.woff2') format('woff2'),
+        url('/fonts/helveticaneuecyr-bold-webfont.woff') format('woff'),
+        url('/fonts/helveticaneuecyr-bold-webfont.ttf') format('truetype'),
+        url('/fonts/helveticaneuecyr-bold-webfont.svg#helveticaneuecyrbold') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -13,10 +13,10 @@
     font-family: 'helveticaneuecyrlight';
     src: url('/fonts/helveticaneuecyr-light-webfont.eot');
     src: url('/fonts/helveticaneuecyr-light-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/fonts/helveticaneuecyr-light-webfont.woff2') format('woff2'),
-         url('/fonts/helveticaneuecyr-light-webfont.woff') format('woff'),
-         url('/fonts/helveticaneuecyr-light-webfont.ttf') format('truetype'),
-         url('/fonts/helveticaneuecyr-light-webfont.svg#helveticaneuecyrlight') format('svg');
+        url('/fonts/helveticaneuecyr-light-webfont.woff2') format('woff2'),
+        url('/fonts/helveticaneuecyr-light-webfont.woff') format('woff'),
+        url('/fonts/helveticaneuecyr-light-webfont.ttf') format('truetype'),
+        url('/fonts/helveticaneuecyr-light-webfont.svg#helveticaneuecyrlight') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -24,6 +24,10 @@
 
 body{    
     background-image: url(/img/background.png);
+}
+
+.megawrap {
+    display: flex;
 }
 
 header {
@@ -127,7 +131,7 @@ header {
     background-image: url(../img/sn/git_hover.png);
 }
 
-.header_wrapper>.header_line {
+.header_wrapper>.header_line, footer>.fline {
     background-color:  #1c667a;
     background: -webkit-linear-gradient(0deg, #1c667a 0%, #f6fafe 0%, #d8d8d8 0%, #f2f6fa 0%, #b6ced6 28%, #1c667a 48%, #b4ccd5 71%, #f2f6fa 100%);
     background: -moz-linear-gradient(0deg, #1c667a 0%, #f6fafe 0%, #d8d8d8 0%, #f2f6fa 0%, #b6ced6 28%, #1c667a 48%, #b4ccd5 71%, #f2f6fa 100%);
@@ -138,4 +142,26 @@ header {
     height: 3px;
     display: block;
     margin-top: 28px;
+}
+
+
+footer {
+    display: block;
+    clear: both;
+    height: 78px;
+    background: #eff3f7;
+    color:  #6f727e;
+    border-top: 3px solid #e7eff3;
+    margin-top: 45px;
+    font-family: fira_sansregular;
+    color:  #4a545d;
+    font-size: 13px; /* Приближение из-за подстановки шрифтов */
+    font-weight: 300;
+    text-align: center;
+    top: 0px;
+}
+
+footer>.fline {
+    margin-bottom: 30px;
+    margin-top: -2px;
 }
