@@ -48,7 +48,7 @@ menu a:hover {
     color: #3ba8c0;
 }
 
-menu .line {
+menu .line_1, .line_2 {
     background-color:  #3ba8c0;
     width: 230px;
     height: 2px;
@@ -114,4 +114,18 @@ contacts>ul>li.skype {
 
 contacts>ul>li>img {
     margin: 0 0 -1px 42px;
+}
+
+.active {
+    background-color: #3ba8c0;
+    border-radius: 2px;
+}
+
+.active a {
+    color: #ffffff;    
+}
+
+.active a:hover {
+    color: #ffffff;    
+    cursor: default;
 }

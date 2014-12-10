@@ -46,9 +46,9 @@
                     <menu>
                         <ul id="navigation">
                             <li><a href="/">Обо мне</a></li>
-                            <div class="line"></div>
+                            <div class="line_1"></div>
                             <li><a href="/works">Мои работы</a></li>
-                            <div class="line"></div>
+                            <div class="line_2"></div>
                             <li><a href="/contacts">Связаться со мной</a></li>
                         </ul>
                     </menu>
