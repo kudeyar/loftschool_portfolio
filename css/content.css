@@ -31,7 +31,7 @@ content_title {
 
 infa {
     display: block;
-    margin: 17px 22px;
+    margin: 15px 22px;
     float: left;
     width: 100%;
 }
@@ -115,5 +115,26 @@ infa>.work>.work_time {
     width: 240px;
     float: right;
     margin: 0px 4px 0 0;;
+}
 
+infa>work {
+    display: inline-block;
+    margin-right: 30px;
+    margin-bottom: 20px;
+}
+
+infa>work>.works {
+    display: block;
+    border-radius: 4px;
+    width: 181px;
+    height: 127px;
+    border: 2px solid #3ba8c0;
+    margin-bottom: 8px;
+}
+
+infa>work a {
+    color:  #3ba8c0;
+    font-size: 13px; /* Приближение из-за подстановки шрифтов */
+    font-weight: 300;
+    font-style: italic;
 }

@@ -1,0 +1,11 @@
+
+RewriteEngine On
+
+Options +FollowSymLinks
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^sergey-loft.zz.mu[nc]
+RewriteRule ^(.*)$ http://www.sergey-loft.zz.mu/$1 [r=301,nc]
+
+ErrorDocument 404 /404.php
+
+RewriteRule ^(([^/]+/)*[^.]+)$ /$1.php [L]

@@ -28,6 +28,10 @@ body{
 
 .megawrap {
     display: flex;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto 100px;
 }
 
 header {
@@ -39,7 +43,7 @@ header {
 }
 
 .header_wrapper{    
-    width: 1280px;
+    width: 1245px;
     margin: 0 auto;
     height: 119px;
     padding-top: 18px;
@@ -47,7 +51,7 @@ header {
 }
 
 .loft-text {
-    margin-left: 63px;
+    margin-left: 46px;
     display: inline-block;
 }
 
@@ -86,7 +90,7 @@ header {
     height: 47px;
     float: right;
     margin-top: 17px;
-    margin-right: 5px;
+    margin-right: -13px;
 }
 
 .sn a {
