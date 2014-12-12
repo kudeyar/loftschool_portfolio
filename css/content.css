@@ -334,7 +334,7 @@ form_contact>form>label>.message {
     font-size: 17px;
 }
 
-.button_submit, .button_clear {
+.button_submit, .button_clear, .button_addpr {
     margin-top: 16px;
     display: inline-block;
     border-radius: 5px;
@@ -346,7 +346,7 @@ form_contact>form>label>.message {
     font-size: 19px;
 }
 
-.button_submit {
+.button_submit, .button_addpr {
     background-color:  #48cbe8;
     border-bottom: 2px solid #3ba8c0;
 }
@@ -355,4 +355,64 @@ form_contact>form>label>.message {
     background-color:  #849db5;
     float: right;
     border-bottom: 2px solid #687b8f;
+}
+
+.button_addpr {
+    display: block;
+    margin: 0 auto;
+}
+
+.modal-body {
+    background-color: #eff3f7;
+}
+
+.modal_addpr {
+    width: 362px;
+    border-radius: 4px 4px 0 0;
+    left: 2%;
+}
+
+.modal_add_head {
+    background-color: #48cbe8;
+    border-bottom: 9px solid #67dffa;
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: 400;
+    height: 50px;
+    border-radius: 4px 4px 0 0;
+}
+
+.modal_add_head>h3, .modal_add_head>.close {
+    margin-top: -7px;
+}
+
+.modal-body>form>label {
+    color: #959aa8;
+    font-size: 17px;
+    font-weight: 300;
+    margin-bottom: 15px;
+    margin-left: 7px;
+}
+
+.modal-body>form>label>input, input[type=file] {
+    color:  #48cbe8;
+    font-size: 13px;
+    border: 1px solid #48cbe8;
+    background-color: #ffffff;
+    width: 318px;
+    height: 39px;
+    border-radius: 4px;
+    padding: 5px;      
+}
+
+.modal-body>form>label>.opisanie {
+    border-radius: 4px;
+    border: 1px solid #48cbe8;
+    background-color:  #fbfcfd;
+    width: 318px;
+    height: 109px;
+    color:  #48cbe8;
+    font-size: 13px; /* Приближение из-за подстановки шрифтов */
+    font-weight: 300;
+    padding: 10px;
 }
