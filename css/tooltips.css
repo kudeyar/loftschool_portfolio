@@ -1,0 +1,105 @@
+
+label.tooltips span {
+    position: absolute;
+    width:140px;
+    color: #FFFFFF;
+    background: #F97E76;
+    font-size: 13px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    visibility: hidden;
+    border-radius: 0px;
+    box-shadow: 0px 0px 1px #803F23;
+}
+
+.tool1:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    margin-top: -8px;
+    width: 0; height: 0;
+    border-left: 8px solid #F97E76;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+}
+
+.tool3:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    margin-top: -8px;
+    width: 0; height: 0;
+    border-left: 8px solid #F97E76;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+}
+
+.tool2:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -8px;
+    width: 0; height: 0;
+    border-right: 8px solid #F97E76;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+}
+
+.tool4:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -8px;
+    width: 0; height: 0;
+    border-right: 8px solid #F97E76;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+}
+
+.active_name {
+    visibility: visible !important ;
+    top: 10%;
+    opacity: 1;
+    right: 100%;
+    margin-top: -13px;
+    margin-right: 15px;
+    z-index: 999;
+}
+
+.active_message {
+    top: 25%;
+    visibility: visible !important ;
+    opacity: 1;
+    right: 100%;
+    margin-top: -13px;
+    margin-right: 15px;
+    z-index: 999;
+}
+
+.active_email {
+    visibility: visible !important ;
+    top: 10%;
+    opacity: 1;
+    right: -43%;
+    margin-top: -13px;
+    margin-right: 15px;
+    z-index: 999;
+}
+
+.active_capcha {
+    top: 77%;
+    visibility: visible !important ;
+    opacity: 1;
+    right: -43%;
+    margin-top: -13px;
+    margin-right: 15px;
+    z-index: 999;
+}
+
+//************************************
+

@@ -5,24 +5,38 @@
     <div class="top_contacts">
         <span>У вас интересный проект? Напишите мне :)</span>
     </div>
+
+    <!--    <a class="tooltips con_name" href="#">CSS Tooltips
+            <span>Введите имя</span></a>
+        <a class="tooltips con_email" href="#">CSS Tooltips
+            <span>Введите email</span></a>
+        <a class="tooltips con_message" href="#">CSS Tooltips
+            <span>Введите сообщение</span></a>
+        <a class="tooltips con_capcha" href="#">CSS Tooltips
+            <span>Неверный код</span></a>-->
+
     <form_contact>
         <form method="POST" id="send_message">
-            <label class="l_one">
+            <label class="l_one tooltips">
                 Имя <br />
-                <input type="text" name="user" placeholder="Как к Вам обращаться" required>
+                <input type="text" name="user" placeholder="Как к Вам обращаться" class="name">
+                <span class="tool1">Введите имя</span>
             </label>
-            <label>
+            <label class="tooltips">
                 Email <br />
-                <input type="email" name="email" placeholder="Куда мне писать?" required>
+                <input type="email" name="email" placeholder="Куда мне писать?" class="email">
+                <span class="tool2">Введите email</span>
             </label>
-            <label>
+            <label class="tooltips">
                 Сообщение <br />
-                <textarea class="message" placeholder="Кратко, в чем суть" name="message" required></textarea>
+                <textarea class="message" placeholder="Кратко, в чем суть" name="message" ></textarea>
+                <span class="tool3">Введите сообщение</span>
             </label>
-            <label class="l_for">
+            <label class="l_for tooltips">
                 Введите код указанный на картинке <br />
                 <div class="capcha"></div>
-                <input type="text" name="capcha" placeholder="Введите код" class="input-capcha" required>
+                <input type="text" name="capcha" placeholder="Введите код" class="input-capcha" >
+                <span class="tool4">Неверный код</span>
             </label>
 
             <div class="submit_message">
@@ -38,39 +52,74 @@
 
 <script>
     var params = {};
+
+    function clear_form() {
+        $(':input[name=user]').focus(function () {
+            $('.tool1').removeClass('active_name');
+            $('input[name=user]').removeClass('red_input');
+        })
+        if (($(':input').val() !== '') || ($($('.message').val() !== ''))) {
+            $('.email, .message, .input-capcha, .name').val('');
+            $('.email, .input-capcha, .message, .name').focus().blur();
+
+        }
+        $(':input[name=email]').focus(function () {
+            $('.tool2').removeClass('active_email');
+            $('input[name=email]').removeClass('red_input');
+        })
+        $(':input[name=capcha]').focus(function () {
+            $('.tool4').removeClass('active_capcha');
+            $('input[name=capcha]').removeClass('red_input');
+        })
+        $('.message:input').focus(function () {
+            $('.tool3').removeClass('active_message');
+            $('.message:input').removeClass('red_input');
+        });
+    }
+    clear_form();
     $('.button_submit').click(function () {
 
         $form = $('#send_message');
-        if ($form.find('input[name=user]').val() == '') {
-            alert('Введите имя');
-            return false;
+        if ($form.find('input[name=user]').val() === '') {
+            $('label.tooltips span.tool1').addClass('active_name');
+            $('input[name=user]').addClass('red_input');
         } else {
             params.user = $form.find('input[name=user]').val();
         }
-        if ($form.find('input[name=email]').val() == '') {
-            alert('Введите email');
-            return false;
+        if ($form.find('input[name=email]').val() === '') {
+            $('label.tooltips span.tool2').addClass('active_email');
+            $('input[name=email]').addClass('red_input');
         } else {
             params.email = $form.find('input[name=email]').val();
         }
-        if ($form.find('.message').val() == '') {
-            alert('Введите message');
-            return false;
+        if ($form.find('.message').val() === '') {
+            $('label.tooltips span.tool3').addClass('active_message');
+            $('.message').addClass('red_input');
         } else {
             params.message = $form.find('.message').val();
+        }
+        if ($form.find('input[name=capcha]').val() === '') {
+            $('label.tooltips span.tool4').addClass('active_capcha');
+            $('input[name=capcha]').addClass('red_input');
+        } else {
+            params.capcha = $form.find('input[name=capcha]').val();
         }
         params.send = 1;
         $.post('functions.php', params, function (data) {
             if (data === 'ok') {
-                $form.find('[name=user], [name=email]').val('');
-//            $form.find('[name=email]').val('');
-                $form.find('.message').val('');
+                clear_form();
                 alert('Спасибо за письмо');
             } else if (data === 'no') {
-                alert ("no");
+                clear_form();
+                alert("no");
             }
 
         });
         return false;
+    });
+
+    $('.button_clear').click(function () {
+        clear_form();
     })
+    $('body,html').animate({scrollTop: 0}, 0);
 </script>

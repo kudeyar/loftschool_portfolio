@@ -310,7 +310,10 @@ form_contact>form>label>.message {
     font-weight: 300;
     padding: 10px;
 }
-
+.red_input {
+    border: 1px solid #F97E76 !important;
+    background-color: #f2cccd !important;
+}
 .capcha {
     display: inline-block;
     border-radius: 4px;
