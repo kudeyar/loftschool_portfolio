@@ -104,7 +104,8 @@ function sub($text)
                     </label>
                     <label class="file_upload">    
                         Картинка проекта<br />
-                        <input type="file" name="img_project">
+                        <input id = 'project_load' type="file" class="project__input"  accept="image/jpeg,image/png,image/gif">
+                        <input id = 'project_img' type="text" class="project__input required-field input-img" placeholder='Загрузите изображение'>
                     </label>
                     <label>
                         URL проекта <br />

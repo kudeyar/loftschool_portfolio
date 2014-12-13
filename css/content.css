@@ -419,3 +419,27 @@ form_contact>form>label>.message {
     font-weight: 300;
     padding: 10px;
 }
+
+.portfolio__add {
+    width: 183px;
+    height: 130px;
+    /*background: url('../img/upload.png') 75px 33px no-repeat #EDF8FC;*/
+    border: 1px dashed #3BA8C0;
+    border-radius: 10px;
+    display: block;
+    text-align: center;
+    padding-top: 78px;
+    color: #3BA8C0;
+    font-size: 12px;
+}
+input[type='file'] {
+    margin-bottom: -41px;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.input-img {
+    background: url(../img/load.png) 100% 0px no-repeat #FFF;
+}
