@@ -17,22 +17,22 @@
     <div class="form_contact">
         <form method="POST" id="send_message">
             <label class="l_one tooltips">
-                Имя <br />
+                <div>Имя </div>
                 <input type="text" name="user" placeholder="Как к Вам обращаться" class="name">
                 <span class="tool1">Введите имя</span>
             </label>
             <label class="tooltips">
-                Email <br />
+                <div>Email </div>
                 <input type="email" name="email" placeholder="Куда мне писать?" class="email">
                 <span class="tool2">Введите email</span>
             </label>
             <label class="tooltips">
-                Сообщение <br />
+                <div>Сообщение </div>
                 <textarea class="message" placeholder="Кратко, в чем суть" name="message" ></textarea>
                 <span class="tool3">Введите сообщение</span>
             </label>
             <label class="l_for tooltips">
-                Введите код указанный на картинке <br />
+                <div>Введите код указанный на картинке</div>
                 <div class="capcha"></div>
                 <input type="text" name="capcha" placeholder="Введите код" class="input-capcha" >
                 <span class="tool4">Неверный код</span>

@@ -22,23 +22,23 @@
         <![endif]-->
 
 
-        <header>
+        <div class="header">
             <div class="header_wrapper">
                 <div class="loft-text">
-                    <font class="header_text"><a href="/">LOFTSCHOOL</a></font>
+                    <div class="header_text"><a href="/">LOFTSCHOOL</a></div>
                     <div class="header_title_line"></div>
-                    <font class="header_text_mini">комплексное обучение web разработке</font>
+                    <div class="header_text_mini">комплексное обучение web разработке</div>
                 </div>
 
-                <div class="sn">
-                    <a href="http://vk.com/kudeyarus" class="vk" alt="http://vk.com/kudeyarus"></a>
-                    <a href="http://twitter.com" class="twi" alt="http://twitter.com"></a>
-                    <a href="http://facebook.com" class="fb" alt="http://facebook.com"></a>
-                    <a href="http://github.com/kudeyar/" class="git" alt="http://github.com/kudeyar/"></a>
-                </div>
+                <ul class="sn">
+                    <li><a href="http://vk.com/kudeyarus" class="vk"></a></li>
+                    <li><a href="http://twitter.com" class="twi"></a></li>
+                    <li><a href="http://facebook.com" class="fb"></a></li>
+                    <li><a href="http://github.com/kudeyar/" class="git"></a></li>
+                </ul>
                 <div class="header_line"></div>
             </div>
-        </header>
+        </div>
         <div class="wrap">
             <div id="wrapper">
                 <div class="left_panel">

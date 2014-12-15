@@ -34,7 +34,7 @@ body{
     margin: 0 auto;
 }
 
-header {
+.header {
     background: #eff3f7;
     height: 119px;
     color:  #6f727e;
@@ -91,6 +91,11 @@ header {
     float: right;
     margin-top: 17px;
     margin-right: -13px;
+}
+
+.header_wrapper ul>li {    
+    list-style-type: none;
+    display: inline;
 }
 
 .sn a {

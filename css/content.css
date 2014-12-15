@@ -91,6 +91,7 @@
     font-weight: 300;
     text-align: left;
     padding: 0px;
+    width: 518px;
 }
 
 .info>.work>.work_time {
@@ -100,7 +101,7 @@
     text-align: left;
 }
 
-.navyk {
+.skill {
     display: inline-block;
     border-radius: 2px;
     background: #2e8ca2;
@@ -117,7 +118,7 @@
     margin: 5px;
 }
 
-.group_navyk {
+.group_skill {
     display: inline;
     width: 220px;
     float: right;
@@ -350,6 +351,18 @@ input:-moz-placeholder, textarea:-moz-placeholder {color: #48cbe8;}
 .button_submit, .button_addpr {
     background-color:  #48cbe8;
     border-bottom: 2px solid #3ba8c0;
+}
+
+.button_submit:hover {
+    border-bottom: none;
+}
+
+.button_addpr:hover {
+    border-bottom: none;
+}
+
+.button_clear:hover {
+    border-bottom: none;
 }
 
 .button_clear {

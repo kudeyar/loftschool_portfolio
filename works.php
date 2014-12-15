@@ -19,7 +19,7 @@ function sub($text)
     <div class="info">
         <div class="my_work">
             <div class="view second-effect">
-                <img src="/img/works/arttrack.png" class="works">
+                <img src="/img/works/arttrack.png" class="works" alt="http://art-track.ru/">
                 <div class="mask">
                     <a href="http://art-track.ru/" class="inform" target="_blank">Посмотреть</a>
                 </div>
@@ -34,7 +34,7 @@ function sub($text)
         </div>
         <div class="my_work">
             <div class="view second-effect">
-                <img src="/img/works/antipin.png" class="works">
+                <img src="/img/works/antipin.png" class="works" alt="http://psiholog-antipin.ru/">
                 <div class="mask">
                     <a href="http://psiholog-antipin.ru/" class="inform" target="_blank">Посмотреть</a>
                 </div>
@@ -49,7 +49,7 @@ function sub($text)
         </div>
         <div class="my_work">
             <div class="view second-effect">
-                <img src="/img/works/bugalter.png" class="works">
+                <img src="/img/works/bugalter.png" class="works" alt="http://bugalter.96.lt/">
                 <div class="mask">
                     <a href="http://bugalter.96.lt/" class="inform" target="_blank">Посмотреть</a>
                 </div>
@@ -64,7 +64,7 @@ function sub($text)
         </div>
         <div class="my_work">
             <div class="view second-effect">
-                <img src="/img/works/subcult.png" class="works">
+                <img src="/img/works/subcult.png" class="works" alt="http://sergey-loft.zz.mu/">
                 <div class="mask">
                     <a href="http://sergey-loft.zz.mu/" class="inform" target="_blank">Посмотреть</a>
                 </div>
@@ -81,8 +81,8 @@ function sub($text)
         <div class="my_work link_add">
             <a href="#" class="add" data-toggle="modal" data-target="#myModal">
                 <div class="add_project">
-                    <img src="/img/add_project.png"><br />
-                    Добавить проект
+                    <img src="/img/add_project.png" alt="add project">
+                    <div>Добавить проект</div>
                 </div>
             </a>
         </div>
@@ -100,20 +100,20 @@ function sub($text)
             <div class="modal-body">
                 <form method="POST" id="add_project" action="functions.php">
                     <label>
-                        Название проекта <br />
+                        <div>Название проекта</div>
                         <input type="text" name="name_project" placeholder="Введите название" required>
                     </label>
                     <label class="file_upload">    
-                        Картинка проекта<br />
+                        <div>Картинка проекта</div>
                         <input id = 'project_load' type="file" class="project__input"  accept="image/jpeg,image/png,image/gif">
                         <input id = 'project_img' type="text" class="project__input required-field input-img" placeholder='Загрузите изображение'>
                     </label>
                     <label>
-                        URL проекта <br />
+                        <div>URL проекта </div>
                         <input type="text" name="url_project" placeholder="Добавьте ссылку" required>
                     </label>
                     <label>
-                        Описание <br />
+                        <div>Описание </div>
                         <textarea class="opisanie" placeholder="Пара слов о Вашем проекте" name="opisanie" required></textarea>
                     </label>
                     <input type="submit" name="submit_project" value="Добавить" class="button_addpr">
