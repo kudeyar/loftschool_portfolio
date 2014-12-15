@@ -1,7 +1,6 @@
 <? require_once 'header.php'; ?>
 
-<content>
-
+<div class="block_content">
     <div class="top_contacts">
         <span>У вас интересный проект? Напишите мне :)</span>
     </div>
@@ -15,7 +14,7 @@
         <a class="tooltips con_capcha" href="#">CSS Tooltips
             <span>Неверный код</span></a>-->
 
-    <form_contact>
+    <div class="form_contact">
         <form method="POST" id="send_message">
             <label class="l_one tooltips">
                 Имя <br />
@@ -44,9 +43,9 @@
                 <input type="button" name="clear" value="Очистить" class="button_clear">
             </div>
         </form>
-    </form_contact>
+    </div>
 
-</content>
+</div>
 
 <? require_once 'footer.php'; ?>
 

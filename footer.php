@@ -1,8 +1,9 @@
-</wrapper>
+        </div>    
+    </div>
 </div>
 <footer>
     <div class="fline"></div>
-    © 2014, Это мой сайт, пожалуйста, не копируйте и не воруйте его
+    <p>© 2014, Это мой сайт, пожалуйста, не копируйте и не воруйте его</p>
 </footer>
 
 
@@ -21,13 +22,5 @@
     $(document).ready(function () {
         var link = window.location.pathname;
         $('#navigation li a[href="' + link + '"]').parent().addClass('active');
-        if (link === '/')
-            $('.line_1').removeClass();
-        if (link === '/works') {
-            $('.line_2').removeClass();
-            $('.line_1').removeClass();
-        }
-        if (link === '/contacts')
-            $('.line_2').removeClass();
     });
 </script>

@@ -26,12 +26,12 @@ body{
     background-image: url(/img/background.png);
 }
 
-.megawrap {
+.wrap {
     display: flex;
     min-height: 100%;
     height: auto !important;
     height: 100%;
-    margin: 0 auto 50px;
+    margin: 0 auto;
 }
 
 header {
@@ -156,7 +156,6 @@ footer {
     background: #eff3f7;
     color:  #6f727e;
     border-top: 3px solid #e7eff3;
-    margin-top: 45px;
     font-family: fira_sansregular;
     color:  #4a545d;
     font-size: 13px; /* Приближение из-за подстановки шрифтов */

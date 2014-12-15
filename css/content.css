@@ -1,22 +1,19 @@
-content {
-    display: block;
-    position: relative;
-    float: right;
-    width: 650px;
+.block_content {
+    display: inline-block;
+    /*position: relative;*/
     border-radius: 4px;
     background-color:  #eff3f7;
-    margin-top: 25px;
-    margin-right: -25px;
-    font-family: fira_sansregular;
-}
-
-content_title {
-    display: block;
-    height: 68px;
-    width: 100%;
+    margin-bottom: 14px;
 }
 
 .content_title {
+    display: block;
+    height: 68px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.content_title_text {
     display: inline-block;
     color:  #3ba8c0;
     font-size: 27px; /* Приближение из-за подстановки шрифтов */
@@ -29,14 +26,14 @@ content_title {
     float: left;
 }
 
-infa {
+.info {
     display: block;
-    margin: 15px 22px;
+    margin: 1px 22px 0px;
     float: left;
     width: 100%;
 }
 
-infa>.photo {
+.info>.photo {
     display: inline-block;
     width: 200px;
     height: 200px;
@@ -45,24 +42,33 @@ infa>.photo {
     border: 5px solid #3ba8c0;
 }
 
-infa>.title_bold {
+.info>dl {
+    display: inline-block;
+    width: 450px;
+    padding: 3px 0px 0px 38px;
+    
+}
+
+.info>dl>dt {
     display: inline-block;
     color:  #4a545d;
     font-size: 17px; /* Приближение из-за подстановки шрифтов */
     font-weight: 600;
     text-align: left;
-    margin: 3px 15px 13px 38px;
+    margin: 0px 15px 17px 0px;
 }
 
-infa>.text {
+.info>dl>dd {
     display: inline-block;
     color:  #37424d;
     font-size: 15px; /* Приближение из-за подстановки шрифтов */
     font-weight: 300;
     text-align: left;
+    white-space: normal;
+    width: 50%;
 }
 
-infa>.work {
+.info>.work {
     display: block;
     float: left;
     margin: 19px 43px 5px;
@@ -70,16 +76,16 @@ infa>.work {
     min-width: 400px; 
 }
 
-infa>.work>.work_img {
+.info>.work>.work_img {
     float: left;
     margin-right: 30px;
     margin-bottom: 11px;
 }
-infa>.work>.course {
+.info>.work>.course {
     margin: 0px 35px 5px 10px;
 }
 
-infa>.work>.work_place {
+.info>.work>.work_place {
     color:  #4a545d;
     font-size: 17px; /* Приближение из-за подстановки шрифтов */
     font-weight: 300;
@@ -87,7 +93,7 @@ infa>.work>.work_place {
     padding: 0px;
 }
 
-infa>.work>.work_time {
+.info>.work>.work_time {
     color:  #4a545d;
     font-size: 15px; /* Приближение из-за подстановки шрифтов */
     font-weight: 300;
@@ -97,6 +103,7 @@ infa>.work>.work_time {
 .navyk {
     display: inline-block;
     border-radius: 2px;
+    background: #2e8ca2;
     background: -webkit-linear-gradient(90deg, #2e8ca2 0%, #2e8ca2 47%, #3ba8c0 48%, #3ba8c0 100%);
     background: -moz-linear-gradient(90deg, #2e8ca2 0%, #2e8ca2 47%, #3ba8c0 48%, #3ba8c0 100%);
     background: -o-linear-gradient(90deg, #2e8ca2 0%, #2e8ca2 47%, #3ba8c0 48%, #3ba8c0 100%);
@@ -112,19 +119,19 @@ infa>.work>.work_time {
 
 .group_navyk {
     display: inline;
-    width: 240px;
+    width: 220px;
     float: right;
-    margin: 0px 4px 0 0;;
+    margin: 0px 24px 0 0;;
 }
 
-infa>work {
+.info>.my_work {
     display: inline-block;
     margin: 19px 30px 20px -2px;
     vertical-align: top;
     width: 181px;
 }
 
-infa>work>.works, infa>work>.view>.works {
+.info>.my_work>.works, .info>.my_work>.view>.works {
     display: block;
     border-radius: 4px;
     width: 181px;
@@ -133,7 +140,7 @@ infa>work>.works, infa>work>.view>.works {
     margin-bottom: 8px;
 }
 
-infa>work a {
+.info>.my_work a {
     color:  #3ba8c0;
     font-size: 13px; /* Приближение из-за подстановки шрифтов */
     font-weight: 300;
@@ -142,7 +149,7 @@ infa>work a {
     text-align: center;
 }
 
-infa>work p {
+.info>.my_work p {
     display: block;
     text-align: center;
 }
@@ -178,7 +185,7 @@ infa>work p {
     transition: all 0.4s ease-in-out;
 }
 
-.second-effect a.info {
+.second-effect a.inform {
     position:relative;
     top:-50px;
     left: -50px;
@@ -193,7 +200,7 @@ infa>work p {
     cursor: pointer;
 }
 
-.mask a {
+.info>.my_work>.view>.mask a {
     color: #ffffff;
     display: block;
     border: 2.5px solid #eff3f7;
@@ -206,7 +213,7 @@ infa>work p {
     text-decoration: none;
 }
 
-.second-effect:hover a.info {
+.second-effect:hover a.inform {
     opacity:1;
     transform:scale(1,1);
     transition-delay:0.3s;
@@ -237,16 +244,7 @@ infa>work p {
     display: block;
     position: relative;
 }
-/*.view a.info {
-    background:url(/img/vk.png) center no-repeat;
-    display: inline-block;
-    text-decoration: none;
-    padding:0;
-    text-indent:-9999px;
-    width:20px;
-    height:20px;
-}*/
-
+/*контакты*/
 
 .top_contacts {
     display: block;
@@ -266,7 +264,7 @@ infa>work p {
     margin: 43px 0 0 58px;
 }
 
-form_contact {
+.form_contact {
     display: block;
     position: relative;
     width: 400px;
@@ -274,7 +272,7 @@ form_contact {
 
 }
 
-form_contact>form>label {
+.form_contact>form>label {
     color: #959aa8;
     font-size: 19px;
     font-weight: 300;
@@ -285,7 +283,7 @@ form_contact>form>label {
     margin-right: 12px;
 }
 
-form_contact>form>label>input {
+.form_contact>form>label>input {
     color:  #48cbe8;
     font-size: 13px;
     border: 1px solid #48cbe8;
@@ -299,7 +297,7 @@ form_contact>form>label>input {
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color: #48cbe8;}
 input:-moz-placeholder, textarea:-moz-placeholder {color: #48cbe8;}
 
-form_contact>form>label>.message {
+.form_contact>form>label>.message {
     border-radius: 4px;
     border: 1px solid #48cbe8;
     background-color:  #fbfcfd;
@@ -326,7 +324,7 @@ form_contact>form>label>.message {
 .input-capcha {
     display: inline-block;
     height: 32px;
-    margin-left: 14px;
+    margin-left: 13px;
     vertical-align: top;
     margin-top: 20px;
     padding: 7px 8px 0px;
