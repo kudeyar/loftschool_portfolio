@@ -371,6 +371,32 @@ input:-moz-placeholder, textarea:-moz-placeholder {color: #48cbe8;}
     border-bottom: 2px solid #687b8f;
 }
 
+.success_message {
+    display: block;
+    width: 550px;
+    background: #b8e1ce;
+    border: 1px solid #49bb7b;
+    border-radius: 4px;
+    padding: 0px 20px 10px;
+    color: #49bb7b;
+    margin: 20px auto 0px;
+    display: none;
+}
+
+.error_message {
+    display: block;
+    width: 400px;
+    background: #f2cccd;
+    border: 1px solid #f97e76;
+    border-radius: 4px;
+    padding: 0px 20px 10px;
+    color: #f97e76;
+    margin: 20px auto 0px;
+    display: none;
+}
+
+
+
 .button_addpr {
     display: block;
     margin: 0 auto;

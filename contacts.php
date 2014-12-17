@@ -1,18 +1,25 @@
+<? session_start(); ?>
 <? require_once 'header.php'; ?>
+
+<?
+if ($_SESSION["capcha"] == "") {
+    $_SESSION["capcha"] = "LOFTSCHOOL";
+}
+?>
 
 <div class="block_content">
     <div class="top_contacts">
         <span>У вас интересный проект? Напишите мне :)</span>
     </div>
 
-    <!--    <a class="tooltips con_name" href="#">CSS Tooltips
-            <span>Введите имя</span></a>
-        <a class="tooltips con_email" href="#">CSS Tooltips
-            <span>Введите email</span></a>
-        <a class="tooltips con_message" href="#">CSS Tooltips
-            <span>Введите сообщение</span></a>
-        <a class="tooltips con_capcha" href="#">CSS Tooltips
-            <span>Неверный код</span></a>-->
+    <div class="success_message">
+        <h3>Спасибо! Ваше письмо успешно отправлено!</h3>
+    </div>
+    
+    <div class="error_message">
+        <h3>Упс!</h3>
+        <h4>Что то пошло не так. Попробуйте еще раз</h4>
+    </div>
 
     <div class="form_contact">
         <form method="POST" id="send_message">
@@ -33,7 +40,7 @@
             </label>
             <label class="l_for tooltips">
                 <div>Введите код указанный на картинке</div>
-                <div class="capcha"></div>
+                <div class="capcha"><img src="capcha/captcha.php"></div>
                 <input type="text" name="capcha" placeholder="Введите код" class="input-capcha" >
                 <span class="tool4">Неверный код</span>
             </label>
@@ -74,6 +81,8 @@
             $('.tool3').removeClass('active_message');
             $('.message:input').removeClass('red_input');
         });
+        $('.success_message').slideUp();
+        $('.error_message').slideUp();
     }
     clear_form();
     $('.button_submit').click(function () {
@@ -105,12 +114,19 @@
         }
         params.send = 1;
         $.post('functions.php', params, function (data) {
+            console.log(data);
             if (data === 'ok') {
                 clear_form();
-                alert('Спасибо за письмо');
+                $('.success_message').slideToggle();
             } else if (data === 'no') {
                 clear_form();
-                alert("no");
+                $('.error_message').slideToggle();
+            } else if (data === 'capcha_no') {
+                $('label.tooltips span.tool4').addClass('active_capcha');
+                $('input[name=capcha]').addClass('red_input');
+            } else if (data === 'email_no') {
+                $('label.tooltips span.tool2').addClass('active_email');
+                $('input[name=email]').addClass('red_input');
             }
 
         });

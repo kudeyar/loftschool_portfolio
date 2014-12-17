@@ -1,34 +1,25 @@
 <?php
 
-require_once '/lib/PHPMailerAutoload.php';
+session_start();
+require_once 'lib/PHPMailerAutoload.php';
 if (isset($_POST['send'])) {
     $user = trim(htmlspecialchars($_POST['user']));
     $email = trim(htmlspecialchars($_POST['email']));
     $message = trim(htmlspecialchars($_POST['message']));
-    if ($user != '' or $email != '' or $message != '') {
-        $mail = new PHPMailer;
+    $capcha_form = strtoupper(trim(htmlspecialchars($_POST['capcha'])));
+    $capcha_sess = $_SESSION['capcha'];
 
-//$mail->SMTPDebug = 3;                               // Enable verbose debug output
+    if ($capcha_form != $capcha_sess) {
+        echo "capcha_no";
+        return FALSE;
+    } else {
+        if ($user != '' or $email != '' or $message != '') {
+            if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
-        $mail->isSMTP();                                      // Set mailer to use SMTP
-        $mail->Host = 'smtp1.example.com;smtp2.example.com';  // Specify main and backup SMTP servers
-        $mail->SMTPAuth = true;                               // Enable SMTP authentication
-        $mail->Username = 'skkudeyarus@gmail.com';                 // SMTP username
-        $mail->Password = 'uht,fysqlbgkjv';                           // SMTP password
-        $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-        $mail->Port = 587;                                    // TCP port to connect to
-
-        $mail->From = 'skkudeyarus@gmail.com';
-        $mail->FromName = 'Karpov';
-        $mail->addAddress('kudeyar-rolevik@yandex.ru', 'Joe User');     // Add a recipient
-        $mail->addReplyTo('info@example.com', 'Information');
-        $mail->addCC('cc@example.com');
-        $mail->addBCC('bcc@example.com');
-
-        $mail->isHTML(true);                                  // Set email format to HTML
-
-        $mail->Subject = 'Письмо с сайта портфолио';
-        $mail->Body = "<html> 
+                $to = "skkudeyarus@gmail.com";
+                $subject = "Письмо с сайта портфолио";
+                $message = " 
+                        <html> 
                             <head> 
                                 <title>Письмо с сайта</title> 
                             </head> 
@@ -40,25 +31,28 @@ if (isset($_POST['send'])) {
                                 </p> 
                             </body> 
                         </html>";
-        $mail->AltBody = "$email, $message";
 
-        
-        
-        
-//        $mail = new PHPMailer;
-//
-//        $mail->isSMTP();
-//        $mail->Host = "smtp1.example.com;smtp2.example.com";
-//        $mail->SMTPAuth = TRUE;
-//        $mail->SMTPSecure = "ssl";
-//        $mail->Port = 465;
-//        $mail->CharSet = 'UTF-8';
-//
-//        $mail->Username = "kkykapeky@yandex.ru";
-//        $mail->Password = "123654789654123";
-//        $mail->setFrom('kkykapeky@yandex.ru', 'Coder');
-//        $mail->Subject = "Письмо с сайта портфолио";
-//        $mail->msgHTML("<html> 
+                $headers = "Content-type: text/html; charset=utf-8 \r\n";
+
+
+// не смог я запилить через PHPMailer, он ошибку выдавал все время что не может подключиться к SMTP серверу
+// 
+//                $mail = new PHPMailer;
+//                $mail->isSMTP();                                      // Set mailer to use SMTP
+//                $mail->Host = 'smtp.yandex.ru';  // Specify main and backup SMTP servers
+//                $mail->SMTPAuth = true;                               // Enable SMTP authentication
+//                $mail->Username = 'kkykapeky@yandex.ru';                 // SMTP username
+//                $mail->Password = '123654789654123';                           // SMTP password
+//                $mail->SMTPSecure = 'TLS';                            // Enable TLS encryption, `ssl` also accepted
+//                $mail->Port = 465;                                    // TCP port to connect to
+//                $mail->CharSet = 'UTF-8';
+//                $mail->From = 'kkykapeky@yandex.ru';
+//                $mail->FromName = 'Сообщение с сайта';
+//                $mail->addAddress($email, $user);     // Add a recipient
+//                $mail->WordWrap = "80";
+//                $mail->Subject = 'Письмо с сайта портфолио';
+//                $mail->SMTPDebug = 1;
+//                $mail->Body = "<html> 
 //                            <head> 
 //                                <title>Письмо с сайта</title> 
 //                            </head> 
@@ -69,17 +63,16 @@ if (isset($_POST['send'])) {
 //                                    $message
 //                                </p> 
 //                            </body> 
-//                        </html>");
-//        $address = "kudeyar-rolevik@yandex.ru";
-//        $mail->addAddress($address, 'Karpov');
-        if ($mail->send()) {
-            echo 'ok';
-            return true;
-        } else {
-            echo 'no';
-            return false;
+//                        </html>";
+                $send = mail($to, $subject, $message, $headers);
+                if ($send == TRUE) {
+                    echo 'ok';
+                } else {
+                    echo 'no';
+                }
+            } else {
+                echo 'email_no';
+            }
         }
-    } else {
-        return FALSE;
     }
 }

@@ -54,6 +54,7 @@
     <div class="info">
         <div class="work">
             <img src="/img/teach.png" class="work_img" alt="Teach">
+            <div class="work_place">Средне-техническое. НХК</div>
             <div class="work_time">Сентябрь 2006 - Июнь 2011</div>
         </div>
         <div class="work">
