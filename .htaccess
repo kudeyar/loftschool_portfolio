@@ -3,7 +3,7 @@
 #RewriteEngine on
 #RewriteCond %{HTTP_HOST} ^karpov.zz.vc[nc]
 #RewriteRule ^(.*)$ http://www.karpov.zz.vc/$1 [r=301,nc]
-
+AddDefaultCharset UTF-8
 RewriteEngine On
 
 Options +FollowSymLinks

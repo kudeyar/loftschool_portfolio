@@ -1,12 +1,14 @@
 <?php
 
-session_start();
-require_once 'lib/PHPMailerAutoload.php';
+require_once 'config.php';
+
+
 if (isset($_POST['send'])) {
     $user = trim(htmlspecialchars($_POST['user']));
     $email = trim(htmlspecialchars($_POST['email']));
     $message = trim(htmlspecialchars($_POST['message']));
     $capcha_form = strtoupper(trim(htmlspecialchars($_POST['capcha'])));
+    session_start();
     $capcha_sess = $_SESSION['capcha'];
 
     if ($capcha_form != $capcha_sess) {
@@ -36,7 +38,7 @@ if (isset($_POST['send'])) {
 
 
 // не смог я запилить через PHPMailer, он ошибку выдавал все время что не может подключиться к SMTP серверу
-// 
+// require_once 'lib/PHPMailerAutoload.php';
 //                $mail = new PHPMailer;
 //                $mail->isSMTP();                                      // Set mailer to use SMTP
 //                $mail->Host = 'smtp.yandex.ru';  // Specify main and backup SMTP servers
@@ -76,3 +78,28 @@ if (isset($_POST['send'])) {
         }
     }
 }
+
+
+if (isset($_POST['auth'])) {
+    $login = trim(htmlspecialchars($_POST['login']));
+    $pass = trim(htmlspecialchars($_POST['password']));
+    $mdpass = md5($pass);
+    if (empty($login) or empty($pass)) {
+        echo 'no_login';
+        return FALSE;
+    }
+
+    $result = mysql_query("SELECT * FROM users WHERE login='" . $login . "'");
+    $row = mysql_fetch_assoc($result);
+    if (mysql_num_rows($result) == 0) {
+        echo 'no_login';
+        return FALSE;
+    } elseif ($row['password'] == $mdpass) {
+        session_start();
+        $_SESSION['auth'] = $row['id'];
+        echo 'ok';
+    } else {
+        echo 'no-login';
+    }
+}
+

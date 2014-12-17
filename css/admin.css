@@ -1,0 +1,74 @@
+.block_auth {
+    display: block;
+    /*position: relative;*/
+    border-radius: 4px;
+    background-color:  #eff3f7;
+    width: 590px;
+    box-shadow: 0px 2px 5px 0px rgba(50, 50, 50, 0.75);
+    margin: 0px auto;
+    padding-bottom: 1px;
+}
+
+.top_form {
+    display: flex;
+    background-color:  #48cbe8;
+    border-radius: 4px 4px 0 0;
+    width: 590px;
+    height: 106px;
+    border-bottom: 15px solid #67dffa;
+    color:  #ffffff;
+    font-size: 40px; /* Приближение из-за подстановки шрифтов */
+    font-weight: 300;
+    text-height: 15px;
+}
+
+.top_form>span {
+    display: inline-block;
+    margin: 18px auto 0;
+    font-family: fira_sansbook;
+}
+
+.form_auth {
+    display: block;
+    position: relative;
+    width: 400px;
+    margin: 18px auto;
+}
+
+.form_auth>form>label {
+    color: #959aa8;
+    font-size: 36px;
+    font-weight: 300;
+    margin: 0px auto 22px ;
+    display: block;
+    text-align: center;
+    font-family: fira_sanslight;
+}
+
+.login {
+    margin-right: 12px;
+}
+
+.form_auth>form>label>input {
+    color:  #48cbe8;
+    font-size: 17px;
+    border: 1px solid #48cbe8;
+    background-color: #ffffff;
+    width: 424px;
+    height: 62px;
+    border-radius: 4px;
+    padding: 20px;      
+}
+
+.button_auth {
+    margin: 30px auto;
+    display: block;
+    border-radius: 8px;    
+    width: 226px;
+    height: 51px;
+    border: 0px;
+    color: #f6f6f6;
+    font-size: 36px;
+    border-bottom: 3px solid #3ba8c0;
+    font-family: fira_sansbook;
+}

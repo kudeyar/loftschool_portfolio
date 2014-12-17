@@ -1,5 +1,6 @@
 <? require_once 'header.php'; ?>
-
+<? require_once 'menu.php'; ?>
+<? @session_start(); ?>
 <?
 
 function sub($text)
@@ -77,15 +78,16 @@ function sub($text)
                 ?>
             </p>
         </div>
-
-        <div class="my_work link_add">
-            <a href="#" class="add" data-toggle="modal" data-target="#myModal">
-                <div class="add_project">
-                    <img src="/img/add_project.png" alt="add project">
-                    <div>Добавить проект</div>
-                </div>
-            </a>
-        </div>
+        <? if (isset($_SESSION['auth'])) : ?>
+            <div class="my_work link_add">
+                <a href="#" class="add" data-toggle="modal" data-target="#myModal">
+                    <div class="add_project">
+                        <img src="/img/add_project.png" alt="add project">
+                        <div>Добавить проект</div>
+                    </div>
+                </a>
+            </div>
+        <? endif; ?>
     </div>
 </div>
 

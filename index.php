@@ -1,4 +1,5 @@
 <? require_once 'header.php'; ?>
+<? require_once 'menu.php'; ?>
 
 <div class="block_content">
     <div class="content_title">

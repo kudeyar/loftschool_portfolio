@@ -348,7 +348,7 @@ input:-moz-placeholder, textarea:-moz-placeholder {color: #48cbe8;}
     font-size: 19px;
 }
 
-.button_submit, .button_addpr {
+.button_submit, .button_addpr, .button_auth {
     background-color:  #48cbe8;
     border-bottom: 2px solid #3ba8c0;
 }
@@ -358,6 +358,10 @@ input:-moz-placeholder, textarea:-moz-placeholder {color: #48cbe8;}
 }
 
 .button_addpr:hover {
+    border-bottom: none;
+}
+
+.button_auth:hover {
     border-bottom: none;
 }
 

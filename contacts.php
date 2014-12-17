@@ -1,5 +1,6 @@
 <? session_start(); ?>
 <? require_once 'header.php'; ?>
+<? require_once 'menu.php'; ?>
 
 <?
 if ($_SESSION["capcha"] == "") {
@@ -63,7 +64,7 @@ if ($_SESSION["capcha"] == "") {
         $(':input[name=user]').focus(function () {
             $('.tool1').removeClass('active_name');
             $('input[name=user]').removeClass('red_input');
-        })
+        });
         if (($(':input').val() !== '') || ($($('.message').val() !== ''))) {
             $('.email, .message, .input-capcha, .name').val('');
             $('.email, .input-capcha, .message, .name').focus().blur();
@@ -72,11 +73,11 @@ if ($_SESSION["capcha"] == "") {
         $(':input[name=email]').focus(function () {
             $('.tool2').removeClass('active_email');
             $('input[name=email]').removeClass('red_input');
-        })
+        });
         $(':input[name=capcha]').focus(function () {
             $('.tool4').removeClass('active_capcha');
             $('input[name=capcha]').removeClass('red_input');
-        })
+        });
         $('.message:input').focus(function () {
             $('.tool3').removeClass('active_message');
             $('.message:input').removeClass('red_input');
