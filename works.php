@@ -1,6 +1,7 @@
+<? @session_start(); ?>
 <? require_once 'header.php'; ?>
 <? require_once 'menu.php'; ?>
-<? @session_start(); ?>
+
 <?
 
 function sub($text)
@@ -100,25 +101,32 @@ function sub($text)
                 <h3 id="myModalLabel">Добавление проекта</h3>
             </div>
             <div class="modal-body">
-                <form method="POST" id="add_project" action="functions.php">
-                    <label>
+                <form method="POST" id="add_project" enctype="multipart/form-data">
+                    <label class="tooltips">
                         <div>Название проекта</div>
-                        <input type="text" name="name_project" placeholder="Введите название" required>
+                        <input type="text" name="name_project" class="name_project" placeholder="Введите название" >
+                        <span class="tool5">Введите название</span>
                     </label>
-                    <label class="file_upload">    
+                    <label class="file_upload tooltips">    
                         <div>Картинка проекта</div>
-                        <input id = 'project_load' type="file" class="project__input"  accept="image/jpeg,image/png,image/gif">
-                        <input id = 'project_img' type="text" class="project__input required-field input-img" placeholder='Загрузите изображение'>
+                        <input id="file_project" name="file_project" class="b-form-modal_inputs-upload" type="file" placeholder=""/>
+                        <div>
+                            <div id="file_name" class="b-form-modal_fn-upload">Загрузите изображение</div>
+                            <div class="btn-upload"></div>
+                        </div>
+                        <span class="tool6">Выберите картинку</span>
                     </label>
-                    <label>
+                    <label class="tooltips">
                         <div>URL проекта </div>
-                        <input type="text" name="url_project" placeholder="Добавьте ссылку" required>
+                        <input type="text" name="url_project" class="url_project" placeholder="Добавьте ссылку" >
+                        <span class="tool7">Введите URL</span>
                     </label>
-                    <label>
+                    <label class="tooltips">
                         <div>Описание </div>
-                        <textarea class="opisanie" placeholder="Пара слов о Вашем проекте" name="opisanie" required></textarea>
+                        <textarea class="opisanie" placeholder="Пара слов о Вашем проекте" name="opisanie" ></textarea>
+                        <span class="tool8">Введите описание</span>
                     </label>
-                    <input type="submit" name="submit_project" value="Добавить" class="button_addpr">
+                    <input type="button" name="submit_project" value="Добавить" class="button_addpr">
                 </form>
             </div>
         </div>
@@ -129,11 +137,104 @@ function sub($text)
 
 
 <script>
+    var params = {};
     $(document).ready(function () {
-
         $('.add').click(function () {
             $('#myModal').modal('show');
+            clear_form();
             return false;
+        });
+
+        function clear_form() {
+            $(':input[name=name_project]').focus(function () {
+                $('.tool5').removeClass('active_nameproject');
+                $('input[name=name_project]').removeClass('red_input');
+            });
+            if (($(':input').val() !== '') || ($($('.opisanie').val() !== ''))) {
+                $('.name_project, .url_project, .opisanie, .b-form-modal_inputs-upload').val('');
+                $('div#file_name').html('Загрузите изображение');
+            }
+            $('#file_project').click(function () {
+                $('.tool6').removeClass('active_file');
+                $('#file_name').removeClass('red_input');
+            });
+            $(':input[name=url_project]').focus(function () {
+                $('.tool7').removeClass('active_url');
+                $('input[name=url_project]').removeClass('red_input');
+            });
+            $('.opisanie:input').focus(function () {
+                $('.tool8').removeClass('active_opisanie');
+                $('.opisanie:input').removeClass('red_input');
+            });
+            $('.tool6').removeClass('active_file');
+            $('#file_name').removeClass('red_input');
+            $('.tool5').removeClass('active_nameproject');
+            $('input[name=name_project]').removeClass('red_input');
+            $('.tool7').removeClass('active_url');
+            $('input[name=url_project]').removeClass('red_input');
+            $('.tool8').removeClass('active_opisanie');
+            $('.opisanie:input').removeClass('red_input');
+            $('.success_message').slideUp();
+            $('.error_message').slideUp();
+        }
+        clear_form();
+
+        $('.button_addpr').click(function () {
+            var btnUpload = $('.button_addpr');
+            $form = $('#add_project');
+            if ($form.find('input[name=name_project]').val() === '') {
+                $('label.tooltips span.tool5').addClass('active_nameproject');
+                $('input[name=name_project]').addClass('red_input');
+            } else {
+                params.name_proj = $form.find('input[name=name_project]').val();
+            }
+            if ($form.find('input[name=url_project]').val() === '') {
+                $('label.tooltips span.tool7').addClass('active_url');
+                $('input[name=url_project]').addClass('red_input');
+            } else {
+                params.url = $form.find('input[name=url_project]').val();
+            }
+            if ($form.find('.opisanie').val() === '') {
+                $('label.tooltips span.tool8').addClass('active_opisanie');
+                $('.opisanie').addClass('red_input');
+            } else {
+                params.opisanie = $form.find('.opisanie').val();
+            }
+//            if ($form.find('input[name=file_project]').val() === '') {
+//                $('label.tooltips span.tool6').addClass('active_file');
+//                $('#file_name').addClass('red_input');
+//            } else {
+//                params.file = $form.find('input[name=file_project]').val();
+//            }
+            params.add = 1;
+            $.ajaxUpload({
+                url: "upload.php",
+                name: "file",
+                onSubmit: function () {
+
+                },
+                onComplete: function (result) {
+                    $.post('functions.php', params, function (data) {
+                        console.log(data);
+                        if (data === 'ok') {
+                            alert('ok');
+                        } else if (data === 'no') {
+                            alert('no');
+                        }
+                        return false;
+                    });
+                }
+            });
+
+            return false;
+        });
+
+        $('form input[type=file]').change(function () {
+            if ($('form input[type=file]').val() !== '') {
+                $('div#file_name').html($('form input[type=file]').val());
+            } else {
+                $('div#file_name').html('Загрузите изображение');
+            }
         });
     });
 </script>       

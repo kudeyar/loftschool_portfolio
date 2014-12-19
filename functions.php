@@ -103,3 +103,28 @@ if (isset($_POST['auth'])) {
     }
 }
 
+if (isset($_POST['add'])) {
+    $name = trim(htmlspecialchars($_POST['name_proj']));
+    $url = trim(htmlspecialchars($_POST['url']));
+    $description = trim(htmlspecialchars($_POST['opisanie']));
+    $img = $_SESSION['filename'];
+//    if ($img != '') {
+//        $put = "/img/works/";
+//        $img = $put . basename($_FILES['file']['name']);
+//        copy($_FILES['img']['tmp_name'], $img);
+//    }
+
+    if ($name != '' or $url != '' or $description != '') {
+        $sql = "INSERT INTO works (title, img, url, description) VALUES ('{$name}', '{$img}', '{$url}', '{$description}')";
+        $result = mysql_query($sql);
+        if ($result == TRUE) {
+            echo 'ok';
+        } else {
+            echo 'no';
+        }
+    } else {
+        echo 'no';
+        return FALSE;
+    }
+}
+

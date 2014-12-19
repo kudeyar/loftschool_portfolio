@@ -10,7 +10,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>Sergey LoftSchool</title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/img/favicon.ico" >
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/main.css">
@@ -19,27 +19,26 @@
     </head>
     <body>
         <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+            <p class="browsehappy">У вас старый браузер</strong> Пожалуйста <a href="http://browsehappy.com/">с качайте нормальный</a> </p>
         <![endif]-->
+        <div class="main">
 
+            <div class="header">
+                <div class="header_wrapper">
+                    <div class="loft-text">
+                        <div class="header_text"><a href="/">LOFTSCHOOL</a></div>
+                        <div class="header_title_line"></div>
+                        <div class="header_text_mini">комплексное обучение web разработке</div>
+                    </div>
 
-        <div class="header">
-            <div class="header_wrapper">
-                <div class="loft-text">
-                    <div class="header_text"><a href="/">LOFTSCHOOL</a></div>
-                    <div class="header_title_line"></div>
-                    <div class="header_text_mini">комплексное обучение web разработке</div>
+                    <ul class="sn">
+                        <li><a href="http://vk.com/kudeyarus" class="vk"></a></li>
+                        <li><a href="http://twitter.com" class="twi"></a></li>
+                        <li><a href="http://facebook.com" class="fb"></a></li>
+                        <li><a href="http://github.com/kudeyar/" class="git"></a></li>
+                    </ul>
+                    <div class="header_line"></div>
                 </div>
-
-                <ul class="sn">
-                    <li><a href="http://vk.com/kudeyarus" class="vk"></a></li>
-                    <li><a href="http://twitter.com" class="twi"></a></li>
-                    <li><a href="http://facebook.com" class="fb"></a></li>
-                    <li><a href="http://github.com/kudeyar/" class="git"></a></li>
-                </ul>
-                <div class="header_line"></div>
             </div>
-        </div>
-        <div class="wrap">
-            <div id="wrapper">
-                
+            <div class="wrap">
+                <div id="wrapper">
