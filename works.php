@@ -196,6 +196,13 @@ $img_array = array(
                 if (data === 'ok') {
                     $('#myModal').modal('hide');
                     $('#myModalSuc').modal('show');
+                    $('.info').append("<div class='my_work'>\n\
+                    <div class='view second-effect'>\n\
+                    <img src='img/works/antipin.png' class='works'>\n\
+                    <div class='mask'><a href='"+params.url+"' class='inform' target='_blank'>Посмотреть</a></div>\n\
+                    </div><a href='"+params.url+"'>"+params.url+"</a>\n\
+                    <p>"+params.opisanie+"</p>\n\
+                    </div>");
                 } else if (data === 'no') {
                     alert('no');
                 }
