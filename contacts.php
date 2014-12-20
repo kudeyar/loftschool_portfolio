@@ -1,10 +1,13 @@
 <? session_start(); ?>
+<? $title = "Связаться со мной"; ?>
 <? require_once 'header.php'; ?>
 <? require_once 'menu.php'; ?>
 
 <?
-if ($_SESSION["capcha"] == "") {
-    $_SESSION["capcha"] = "LOFTSCHOOL";
+if (isset($_SESSION["capcha"])) {
+    if ($_SESSION["capcha"] == "") {
+        $_SESSION["capcha"] = "LOFTSCHOOL";
+    }
 }
 ?>
 
@@ -16,7 +19,7 @@ if ($_SESSION["capcha"] == "") {
     <div class="success_message">
         <h3>Спасибо! Ваше письмо успешно отправлено!</h3>
     </div>
-    
+
     <div class="error_message">
         <h3>Упс!</h3>
         <h4>Что то пошло не так. Попробуйте еще раз</h4>

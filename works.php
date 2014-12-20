@@ -1,7 +1,8 @@
 <? @session_start(); ?>
+<? $title = "Мои работы"; ?>
 <? require_once 'header.php'; ?>
 <? require_once 'menu.php'; ?>
-
+<? require_once 'functions.php'; ?>
 <?
 
 function sub($text)
@@ -11,6 +12,13 @@ function sub($text)
     }
     echo $text;
 }
+
+$img_array = array(
+    "/img/works/arttrack.png",
+    "/img/works/antipin.png",
+    "/img/works/bugalter.png",
+    "/img/works/subcult.png"
+);
 ?>
 
 
@@ -19,67 +27,28 @@ function sub($text)
         <div class="content_title_text">Мои работы</div>
     </div>
     <div class="info">
-        <div class="my_work">
-            <div class="view second-effect">
-                <img src="/img/works/arttrack.png" class="works" alt="http://art-track.ru/">
-                <div class="mask">
-                    <a href="http://art-track.ru/" class="inform" target="_blank">Посмотреть</a>
+        <?
+        $res = viewProject();
+        foreach ($res as $work) :
+            ?>
+            <? $i = rand(0, 3);
+            $img = $img_array[$i];
+            ?>
+            <div class="my_work">
+                <div class="view second-effect">
+                    <img src="<?= $img; ?>" class="works" alt="<?= $work['url']; ?>">
+                    <div class="mask">
+                        <a href="<?= $work['url']; ?>" class="inform" target="_blank">Посмотреть</a>
+                    </div>
                 </div>
+                <a href="<?= $work['url']; ?>"><?= $work['url']; ?></a>
+                <p>
+                    <?= sub($work['description']); ?>
+                </p>
             </div>
-            <a href="http://art-track.ru/">art-track.ru</a>
-            <p>
-                <?
-                $text = "Сайт фирмы по предоставлению ГЛОНАСС отслеживания транспорта и контроля расхода топлива";
-                sub($text);
-                ?>
-            </p>
-        </div>
-        <div class="my_work">
-            <div class="view second-effect">
-                <img src="/img/works/antipin.png" class="works" alt="http://psiholog-antipin.ru/">
-                <div class="mask">
-                    <a href="http://psiholog-antipin.ru/" class="inform" target="_blank">Посмотреть</a>
-                </div>
-            </div>
-            <a href="http://psiholog-antipin.ru/">psiholog-antipin.ru</a>
-            <p>
-                <?
-                $text = "Сайт визитка психолога";
-                sub($text);
-                ?>
-            </p>
-        </div>
-        <div class="my_work">
-            <div class="view second-effect">
-                <img src="/img/works/bugalter.png" class="works" alt="http://bugalter.96.lt/">
-                <div class="mask">
-                    <a href="http://bugalter.96.lt/" class="inform" target="_blank">Посмотреть</a>
-                </div>
-            </div>
-            <a href="http://bugalter.96.lt/">bugalter.96.lt</a>
-            <p>
-                <?
-                $text = "Просто тренировка верстки, недоделанный";
-                sub($text);
-                ?>
-            </p>
-        </div>
-        <div class="my_work">
-            <div class="view second-effect">
-                <img src="/img/works/subcult.png" class="works" alt="http://sergey-loft.zz.mu/">
-                <div class="mask">
-                    <a href="http://sergey-loft.zz.mu/" class="inform" target="_blank">Посмотреть</a>
-                </div>
-            </div>
-            <a href="http://sergey-loft.zz.mu/">sergey-loft.zz.mu</a>
-            <p>
-                <?
-                $text = "Мой самый первый сайт. Ностальгия...)";
-                sub($text);
-                ?>
-            </p>
-        </div>
-        <? if (isset($_SESSION['auth'])) : ?>
+        <? endforeach; ?>
+
+<? if (isset($_SESSION['auth'])) : ?>
             <div class="my_work link_add">
                 <a href="#" class="add" data-toggle="modal" data-target="#myModal">
                     <div class="add_project">
@@ -88,7 +57,7 @@ function sub($text)
                     </div>
                 </a>
             </div>
-        <? endif; ?>
+<? endif; ?>
     </div>
 </div>
 
@@ -128,6 +97,21 @@ function sub($text)
                     </label>
                     <input type="button" name="submit_project" value="Добавить" class="button_addpr">
                 </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="myModalSuc" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog modal_addpr">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="success_add">
+                    <h3>Ура!</h3>
+                    <h5>Ваш проект успешно добавлен</h5>
+                    <h6>Картинка к сожалению не грузится, остальное норм</h6>
+                </div>
             </div>
         </div>
     </div>
@@ -200,31 +184,24 @@ function sub($text)
             } else {
                 params.opisanie = $form.find('.opisanie').val();
             }
-//            if ($form.find('input[name=file_project]').val() === '') {
-//                $('label.tooltips span.tool6').addClass('active_file');
-//                $('#file_name').addClass('red_input');
-//            } else {
-//                params.file = $form.find('input[name=file_project]').val();
-//            }
+            if ($form.find('input[name=file_project]').val() === '') {
+                $('label.tooltips span.tool6').addClass('active_file');
+                $('#file_name').addClass('red_input');
+            } else {
+                params.file = $form.find('input[name=file_project]').val();
+            }
             params.add = 1;
-            $.ajaxUpload({
-                url: "upload.php",
-                name: "file",
-                onSubmit: function () {
-
-                },
-                onComplete: function (result) {
-                    $.post('functions.php', params, function (data) {
-                        console.log(data);
-                        if (data === 'ok') {
-                            alert('ok');
-                        } else if (data === 'no') {
-                            alert('no');
-                        }
-                        return false;
-                    });
+            $.post('functions.php', params, function (data) {
+//                console.log(data);
+                if (data === 'ok') {
+                    $('#myModal').modal('hide');
+                    $('#myModalSuc').modal('show');
+                } else if (data === 'no') {
+                    alert('no');
                 }
+                return false;
             });
+
 
             return false;
         });
@@ -232,6 +209,16 @@ function sub($text)
         $('form input[type=file]').change(function () {
             if ($('form input[type=file]').val() !== '') {
                 $('div#file_name').html($('form input[type=file]').val());
+//                $.ajaxUpload({
+//                    url: "upload.php",
+//                    name: "file",
+//                    onSubmit: function () {
+//
+//                    },
+//                    onComplete: function (result) {
+//                        console.log("all good!");
+//                    }
+//                });
             } else {
                 $('div#file_name').html('Загрузите изображение');
             }

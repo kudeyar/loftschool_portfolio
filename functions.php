@@ -103,11 +103,18 @@ if (isset($_POST['auth'])) {
     }
 }
 
+if (isset($_POST['exit'])) {
+    session_start();
+    unset($_SESSION['auth']);
+    session_destroy();
+    echo 'ok';
+}
+
 if (isset($_POST['add'])) {
     $name = trim(htmlspecialchars($_POST['name_proj']));
     $url = trim(htmlspecialchars($_POST['url']));
     $description = trim(htmlspecialchars($_POST['opisanie']));
-    $img = $_SESSION['filename'];
+    $img = ''; // увы, добавление картинки через аякс не довел до ума нормально((
 //    if ($img != '') {
 //        $put = "/img/works/";
 //        $img = $put . basename($_FILES['file']['name']);
@@ -126,5 +133,20 @@ if (isset($_POST['add'])) {
         echo 'no';
         return FALSE;
     }
+}
+
+
+function db2array($data){
+	$arr = array();
+	while ($row = mysql_fetch_assoc($data)){
+		$arr[] = $row;
+	}
+	return $arr;
+}
+
+function viewProject(){
+	$sql = "SELECT * FROM works";
+	$res = mysql_query($sql) or die(mysql_error()); 
+	return db2array($res);
 }
 

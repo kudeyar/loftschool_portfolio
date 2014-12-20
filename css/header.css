@@ -43,15 +43,18 @@ body{
 }
 
 .header_wrapper{    
-    width: 1245px;
+    max-width: 1400px;
     margin: 0 auto;
     height: 119px;
     padding-top: 18px;
     display: block;
+    position: relative;
 }
 
 .loft-text {
-    margin-left: 46px;
+    /*margin-left: 46px;*/
+    position: absolute;
+    left: 7.2%;
     display: inline-block;
 }
 
@@ -88,9 +91,12 @@ body{
 
 .sn {
     height: 47px;
-    float: right;
+    position: absolute;
+    right: 2.9%;
+    top: 29.7%;
+/*    float: right;
     margin-top: 17px;
-    margin-right: -13px;
+    margin-right: -13px;*/
 }
 
 .header_wrapper ul>li {    
@@ -150,12 +156,13 @@ body{
     max-width: 1399px;
     height: 3px;
     display: block;
-    margin-top: 28px;
+    margin-top: 98px;
 }
 
 
 footer {
     display: block;
+    position: relative;
     clear: both;
     height: 78px;
     background: #eff3f7;
@@ -172,4 +179,30 @@ footer {
 footer>.fline {
     margin-bottom: 30px;
     margin-top: -2px;
+}
+
+.castle {
+    display: block;
+    position: absolute;
+    left: 30%;
+    top: 30%;
+    width: 20px;
+    height: 32px;
+    cursor: pointer;
+}
+
+.lock {
+    background: url(../img/login.png);    
+}
+
+.lock:hover {
+    background: url(../img/login-hover.png);    
+}
+
+.unlock {
+    background: url(../img/login-hover.png);    
+}
+
+.unlock:hover {
+    background: url(../img/login.png);    
 }

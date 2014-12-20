@@ -1,5 +1,7 @@
+<? $title = "Обо мне"; ?>
 <? require_once 'header.php'; ?>
 <? require_once 'menu.php'; ?>
+<? @session_start(); ?>
 
 <div class="block_content">
     <div class="content_title">
