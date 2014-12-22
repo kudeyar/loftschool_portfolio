@@ -21,7 +21,7 @@
     font-weight: 300;
     line-height: 30px; /* Приближение из-за подстановки шрифтов */
     text-align: left;
-    height: 68px;
+    min-height: 68px;
     padding: 19px;
     border-bottom: 2px solid #3ba8c0;
     float: left;
@@ -253,7 +253,7 @@
     background-color:  #48cbe8;
     border-radius: 4px 4px 0 0;
     width: 650px;
-    height: 138px;
+    min-height: 138px;
     border-bottom: 17px solid #67dffa;
     color:  #ffffff;
     font-size: 27px; /* Приближение из-за подстановки шрифтов */

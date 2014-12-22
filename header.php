@@ -22,7 +22,7 @@
             <p class="browsehappy">У вас старый браузер</strong> Пожалуйста <a href="http://browsehappy.com/">с качайте нормальный</a> </p>
         <![endif]-->
         <div class="main">
-
+            <div class="obertka">
             <div class="header">
                 <div class="header_wrapper">
                     <div class="loft-text">
@@ -32,10 +32,10 @@
                     </div>
 
                     <ul class="sn">
-                        <li><a href="http://vk.com/kudeyarus" class="vk"></a></li>
-                        <li><a href="http://twitter.com" class="twi"></a></li>
-                        <li><a href="http://facebook.com" class="fb"></a></li>
-                        <li><a href="http://github.com/kudeyar/" class="git"></a></li>
+                        <li><a href="http://vk.com/kudeyarus" class="vk">http://vk.com/kudeyarus</a></li>
+                        <li><a href="http://twitter.com" class="twi">http://twitter.com</a></li>
+                        <li><a href="http://facebook.com" class="fb">http://facebook.com</a></li>
+                        <li><a href="http://github.com/kudeyar/" class="git">http://github.com/kudeyar/</a></li>
                     </ul>
                     <div class="header_line"></div>
                 </div>

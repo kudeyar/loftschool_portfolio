@@ -31,7 +31,8 @@ $img_array = array(
         $res = viewProject();
         foreach ($res as $work) :
             ?>
-            <? $i = rand(0, 3);
+            <?
+            $i = rand(0, 3);
             $img = $img_array[$i];
             ?>
             <div class="my_work">
@@ -43,7 +44,7 @@ $img_array = array(
                 </div>
                 <a href="<?= $work['url']; ?>"><?= $work['url']; ?></a>
                 <p>
-                    <?= sub($work['description']); ?>
+    <?= sub($work['description']); ?>
                 </p>
             </div>
         <? endforeach; ?>
@@ -118,117 +119,3 @@ $img_array = array(
 </div>
 
 <? require_once 'footer.php'; ?>
-
-
-<script>
-    var params = {};
-    $(document).ready(function () {
-        $('.add').click(function () {
-            $('#myModal').modal('show');
-            clear_form();
-            return false;
-        });
-
-        function clear_form() {
-            $(':input[name=name_project]').focus(function () {
-                $('.tool5').removeClass('active_nameproject');
-                $('input[name=name_project]').removeClass('red_input');
-            });
-            if (($(':input').val() !== '') || ($($('.opisanie').val() !== ''))) {
-                $('.name_project, .url_project, .opisanie, .b-form-modal_inputs-upload').val('');
-                $('div#file_name').html('Загрузите изображение');
-            }
-            $('#file_project').click(function () {
-                $('.tool6').removeClass('active_file');
-                $('#file_name').removeClass('red_input');
-            });
-            $(':input[name=url_project]').focus(function () {
-                $('.tool7').removeClass('active_url');
-                $('input[name=url_project]').removeClass('red_input');
-            });
-            $('.opisanie:input').focus(function () {
-                $('.tool8').removeClass('active_opisanie');
-                $('.opisanie:input').removeClass('red_input');
-            });
-            $('.tool6').removeClass('active_file');
-            $('#file_name').removeClass('red_input');
-            $('.tool5').removeClass('active_nameproject');
-            $('input[name=name_project]').removeClass('red_input');
-            $('.tool7').removeClass('active_url');
-            $('input[name=url_project]').removeClass('red_input');
-            $('.tool8').removeClass('active_opisanie');
-            $('.opisanie:input').removeClass('red_input');
-            $('.success_message').slideUp();
-            $('.error_message').slideUp();
-        }
-        clear_form();
-
-        $('.button_addpr').click(function () {
-            var btnUpload = $('.button_addpr');
-            $form = $('#add_project');
-            if ($form.find('input[name=name_project]').val() === '') {
-                $('label.tooltips span.tool5').addClass('active_nameproject');
-                $('input[name=name_project]').addClass('red_input');
-            } else {
-                params.name_proj = $form.find('input[name=name_project]').val();
-            }
-            if ($form.find('input[name=url_project]').val() === '') {
-                $('label.tooltips span.tool7').addClass('active_url');
-                $('input[name=url_project]').addClass('red_input');
-            } else {
-                params.url = $form.find('input[name=url_project]').val();
-            }
-            if ($form.find('.opisanie').val() === '') {
-                $('label.tooltips span.tool8').addClass('active_opisanie');
-                $('.opisanie').addClass('red_input');
-            } else {
-                params.opisanie = $form.find('.opisanie').val();
-            }
-            if ($form.find('input[name=file_project]').val() === '') {
-                $('label.tooltips span.tool6').addClass('active_file');
-                $('#file_name').addClass('red_input');
-            } else {
-                params.file = $form.find('input[name=file_project]').val();
-            }
-            params.add = 1;
-            $.post('functions.php', params, function (data) {
-//                console.log(data);
-                if (data === 'ok') {
-                    $('#myModal').modal('hide');
-                    $('#myModalSuc').modal('show');
-                    $('.info').append("<div class='my_work'>\n\
-                    <div class='view second-effect'>\n\
-                    <img src='img/works/antipin.png' class='works'>\n\
-                    <div class='mask'><a href='"+params.url+"' class='inform' target='_blank'>Посмотреть</a></div>\n\
-                    </div><a href='"+params.url+"'>"+params.url+"</a>\n\
-                    <p>"+params.opisanie+"</p>\n\
-                    </div>");
-                } else if (data === 'no') {
-                    alert('no');
-                }
-                return false;
-            });
-
-
-            return false;
-        });
-
-        $('form input[type=file]').change(function () {
-            if ($('form input[type=file]').val() !== '') {
-                $('div#file_name').html($('form input[type=file]').val());
-//                $.ajaxUpload({
-//                    url: "upload.php",
-//                    name: "file",
-//                    onSubmit: function () {
-//
-//                    },
-//                    onComplete: function (result) {
-//                        console.log("all good!");
-//                    }
-//                });
-            } else {
-                $('div#file_name').html('Загрузите изображение');
-            }
-        });
-    });
-</script>       

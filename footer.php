@@ -13,6 +13,7 @@
     <p>© 2014, Это мой сайт, пожалуйста, не копируйте и не воруйте его</p>
 </footer>
 </div>
+</div>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.js"><\/script>')</script>
@@ -23,24 +24,3 @@
 
 </body>
 </html>
-
-
-<script>
-    var params = {};
-    $(document).ready(function () {
-        var link = window.location.pathname;
-        $('#navigation li a[href="' + link + '"]').parent().addClass('active');
-    });
-
-    $('.unlock').click(function () {
-        params.exit = 1;
-        $.post('functions.php', params, function (data) {
-            console.log(data);
-            if (data === 'ok') {
-                $('.castle').removeClass('unlock').addClass('lock');
-                $('.link_add').css('display', 'none');
-            }
-            return false;
-        });
-    });
-</script>

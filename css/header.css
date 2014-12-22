@@ -34,6 +34,12 @@ body{
     margin: 0 auto;
 }
 
+.obertka {
+    display: block;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
 .header {
     background: #eff3f7;
     height: 119px;
@@ -94,9 +100,9 @@ body{
     position: absolute;
     right: 2.9%;
     top: 29.7%;
-/*    float: right;
-    margin-top: 17px;
-    margin-right: -13px;*/
+    /*    float: right;
+        margin-top: 17px;
+        margin-right: -13px;*/
 }
 
 .header_wrapper ul>li {    
@@ -109,6 +115,7 @@ body{
     width: 47px;
     height: 47px;
     margin: 0 10px;
+    text-indent: -999em;
 }
 
 .vk, .fb, .twi, .git {
@@ -205,4 +212,10 @@ footer>.fline {
 
 .unlock:hover {
     background: url(../img/login.png);    
+}
+
+@media screen and (max-width: 650px) {
+    .obertka {
+        width: 960px;
+    }
 }
